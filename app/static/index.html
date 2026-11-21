@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fair-ML Income Classifier</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Fair-ML Income Classifier</h1>
+    <p class="sub">A bias-audited neural network served with ONNX Runtime. Try a prediction, see why, and test fairness.</p>
+    <p class="links"><a href="/docs">API docs</a> · <a href="/metrics">Prometheus metrics</a> · <a href="/drift">Drift report</a></p>
+  </header>
+
+  <section id="model" class="card"><h2>Model</h2><div id="model-body" class="grid3">loading…</div></section>
+
+  <section class="card">
+    <h2>Applicant</h2>
+    <div id="form" class="grid"></div>
+    <div class="buttons">
+      <button id="btn-predict">Predict</button>
+      <button id="btn-explain" class="secondary">Explain</button>
+      <button id="btn-cf" class="secondary">Counterfactual fairness check</button>
+    </div>
+    <details><summary>API key (only if the server requires one)</summary>
+      <input id="apikey" type="password" autocomplete="off" placeholder="X-API-Key"></details>
+  </section>
+
+  <section id="result" class="card hidden"></section>
+  <footer>Demo only - trained on 1994 census data. Not for real-world decisions.</footer>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
