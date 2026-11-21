@@ -1,0 +1,29 @@
+groups:
+  - name: fairml
+    rules:
+      - alert: FairMLDataDrift
+        expr: max(fairml_feature_psi) >= 0.25
+        for: 1m
+        labels: {severity: warning}
+        annotations:
+          summary: "Input data drift detected (PSI >= 0.25)"
+          description: "Live traffic differs strongly from the training data. Check /drift and consider retraining."
+      - alert: FairMLLiveDisparateImpactLow
+        expr: fairml_live_disparate_impact < 0.8
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "Live disparate impact below the 80% rule"
+          description: "Selection rate of the unprivileged group is < 80% of the privileged group in live traffic."
+      - alert: FairMLHighErrorRate
+        expr: sum(rate(fairml_requests_total{status=~"5.."}[5m])) / sum(rate(fairml_requests_total[5m])) > 0.05
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "More than 5% of requests fail"
+      - alert: FairMLHighLatency
+        expr: sum(rate(fairml_request_duration_seconds_sum[5m])) / sum(rate(fairml_request_duration_seconds_count[5m])) > 0.1
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: "Average request latency above 100 ms"
