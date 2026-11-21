@@ -1,0 +1,481 @@
+{
+  "model_name": "adult-income-classifier",
+  "model_version": "2.0.0",
+  "variant": "adversarial",
+  "created_utc": "2026-11-21T06:38:45+00:00",
+  "threshold": 0.5,
+  "features": [
+    "age",
+    "education_num",
+    "capital_gain",
+    "capital_loss",
+    "hours_per_week",
+    "workclass",
+    "marital_status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native_country"
+  ],
+  "numeric_features": [
+    "age",
+    "education_num",
+    "capital_gain",
+    "capital_loss",
+    "hours_per_week"
+  ],
+  "categorical_features": [
+    "workclass",
+    "marital_status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native_country"
+  ],
+  "categories": {
+    "workclass": [
+      "Federal-gov",
+      "Local-gov",
+      "Never-worked",
+      "Private",
+      "Self-emp-inc",
+      "Self-emp-not-inc",
+      "State-gov",
+      "Unknown",
+      "Without-pay"
+    ],
+    "marital_status": [
+      "Divorced",
+      "Married-AF-spouse",
+      "Married-civ-spouse",
+      "Married-spouse-absent",
+      "Never-married",
+      "Separated",
+      "Widowed"
+    ],
+    "occupation": [
+      "Adm-clerical",
+      "Armed-Forces",
+      "Craft-repair",
+      "Exec-managerial",
+      "Farming-fishing",
+      "Handlers-cleaners",
+      "Machine-op-inspct",
+      "Other-service",
+      "Priv-house-serv",
+      "Prof-specialty",
+      "Protective-serv",
+      "Sales",
+      "Tech-support",
+      "Transport-moving",
+      "Unknown"
+    ],
+    "relationship": [
+      "Husband",
+      "Not-in-family",
+      "Other-relative",
+      "Own-child",
+      "Unmarried",
+      "Wife"
+    ],
+    "race": [
+      "Amer-Indian-Eskimo",
+      "Asian-Pac-Islander",
+      "Black",
+      "Other",
+      "White"
+    ],
+    "sex": [
+      "Female",
+      "Male"
+    ],
+    "native_country": [
+      "Cambodia",
+      "Canada",
+      "China",
+      "Columbia",
+      "Cuba",
+      "Dominican-Republic",
+      "Ecuador",
+      "El-Salvador",
+      "England",
+      "France",
+      "Germany",
+      "Greece",
+      "Guatemala",
+      "Haiti",
+      "Holand-Netherlands",
+      "Honduras",
+      "Hong",
+      "Hungary",
+      "India",
+      "Iran",
+      "Ireland",
+      "Italy",
+      "Jamaica",
+      "Japan",
+      "Laos",
+      "Mexico",
+      "Nicaragua",
+      "Outlying-US(Guam-USVI-etc)",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Puerto-Rico",
+      "Scotland",
+      "South",
+      "Taiwan",
+      "Thailand",
+      "Trinadad&Tobago",
+      "United-States",
+      "Unknown",
+      "Vietnam",
+      "Yugoslavia"
+    ]
+  },
+  "baselines": {
+    "age": 37.0,
+    "education_num": 10.0,
+    "capital_gain": 0.0,
+    "capital_loss": 0.0,
+    "hours_per_week": 40.0,
+    "workclass": "Private",
+    "marital_status": "Married-civ-spouse",
+    "occupation": "Prof-specialty",
+    "relationship": "Husband",
+    "race": "White",
+    "sex": "Male",
+    "native_country": "United-States"
+  },
+  "drift_reference": {
+    "n": 34188,
+    "numeric": {
+      "age": {
+        "edges": [
+          22.0,
+          26.0,
+          30.0,
+          33.0,
+          37.0,
+          41.0,
+          45.0,
+          50.0,
+          58.0
+        ],
+        "proportions": [
+          0.12214812214812215,
+          0.0990990990990991,
+          0.10325260325260326,
+          0.07994032994032994,
+          0.1088978588978589,
+          0.10079560079560079,
+          0.09058734058734058,
+          0.09555984555984556,
+          0.10766935766935767,
+          0.09204984204984205
+        ]
+      },
+      "education_num": {
+        "edges": [
+          7.0,
+          9.0,
+          10.0,
+          11.0,
+          13.0
+        ],
+        "proportions": [
+          0.11635661635661636,
+          0.33543933543933546,
+          0.2251959751959752,
+          0.0413010413010413,
+          0.1972914472914473,
+          0.08441558441558442
+        ]
+      },
+      "capital_gain": {
+        "edges": [
+          0.0
+        ],
+        "proportions": [
+          0.9173101673101673,
+          0.0826898326898327
+        ]
+      },
+      "capital_loss": {
+        "edges": [
+          0.0
+        ],
+        "proportions": [
+          0.9535217035217035,
+          0.04647829647829648
+        ]
+      },
+      "hours_per_week": {
+        "edges": [
+          24.0,
+          35.0,
+          40.0,
+          49.0,
+          55.0
+        ],
+        "proportions": [
+          0.10012285012285012,
+          0.11126711126711127,
+          0.49385749385749383,
+          0.09512109512109512,
+          0.11720486720486721,
+          0.08242658242658242
+        ]
+      }
+    },
+    "categorical": {
+      "workclass": {
+        "Private": 0.6926699426699426,
+        "Self-emp-not-inc": 0.07958932958932959,
+        "Local-gov": 0.06481806481806482,
+        "Unknown": 0.057125307125307126,
+        "State-gov": 0.04086229086229086,
+        "Self-emp-inc": 0.03483678483678484,
+        "Federal-gov": 0.029513279513279513,
+        "Without-pay": 0.00038025038025038023,
+        "Never-worked": 0.00020475020475020476
+      },
+      "marital_status": {
+        "Married-civ-spouse": 0.4571779571779572,
+        "Never-married": 0.3316075816075816,
+        "Divorced": 0.135983385983386,
+        "Separated": 0.03123903123903124,
+        "Widowed": 0.030858780858780858,
+        "Married-spouse-absent": 0.012314262314262314,
+        "Married-AF-spouse": 0.000819000819000819
+      },
+      "occupation": {
+        "Prof-specialty": 0.12712062712062713,
+        "Craft-repair": 0.12627237627237628,
+        "Exec-managerial": 0.1252193752193752,
+        "Adm-clerical": 0.1138996138996139,
+        "Sales": 0.11109161109161109,
+        "Other-service": 0.10138060138060138,
+        "Machine-op-inspct": 0.061542061542061544,
+        "Unknown": 0.05733005733005733,
+        "Transport-moving": 0.04797004797004797,
+        "Handlers-cleaners": 0.04238329238329238,
+        "Tech-support": 0.030156780156780156,
+        "Farming-fishing": 0.03003978003978004,
+        "Protective-serv": 0.020211770211770213,
+        "Priv-house-serv": 0.005001755001755002,
+        "Armed-Forces": 0.00038025038025038023
+      },
+      "relationship": {
+        "Husband": 0.40303615303615303,
+        "Not-in-family": 0.2564935064935065,
+        "Own-child": 0.1560781560781561,
+        "Unmarried": 0.10527085527085527,
+        "Wife": 0.04738504738504738,
+        "Other-relative": 0.031736281736281735
+      },
+      "race": {
+        "White": 0.8536913536913537,
+        "Black": 0.09713934713934715,
+        "Asian-Pac-Islander": 0.031297531297531295,
+        "Amer-Indian-Eskimo": 0.009418509418509418,
+        "Other": 0.008453258453258453
+      },
+      "sex": {
+        "Male": 0.6684801684801684,
+        "Female": 0.3315198315198315
+      },
+      "native_country": {
+        "United-States": 0.8978881478881479,
+        "Mexico": 0.01907101907101907,
+        "Unknown": 0.017433017433017433,
+        "Philippines": 0.00585000585000585,
+        "Germany": 0.0042997542997543,
+        "Puerto-Rico": 0.0037732537732537734,
+        "Canada": 0.003480753480753481,
+        "El-Salvador": 0.0033345033345033347,
+        "India": 0.003159003159003159,
+        "Cuba": 0.002837252837252837,
+        "England": 0.002486252486252486,
+        "China": 0.002457002457002457,
+        "South": 0.0024277524277524277,
+        "Jamaica": 0.0022522522522522522,
+        "Dominican-Republic": 0.002223002223002223,
+        "Italy": 0.0020182520182520183,
+        "Japan": 0.0019012519012519013,
+        "Poland": 0.0018427518427518428,
+        "Guatemala": 0.0017842517842517843,
+        "Vietnam": 0.0016965016965016966,
+        "Haiti": 0.0016965016965016966,
+        "Columbia": 0.001638001638001638,
+        "Taiwan": 0.0015502515502515502,
+        "Portugal": 0.0012285012285012285,
+        "Greece": 0.0011992511992511992,
+        "Iran": 0.00117000117000117,
+        "Nicaragua": 0.0010237510237510238,
+        "Peru": 0.0009945009945009945,
+        "Ecuador": 0.0009067509067509068,
+        "France": 0.0008775008775008775,
+        "Ireland": 0.0007897507897507897,
+        "Cambodia": 0.0006435006435006435,
+        "Thailand": 0.000585000585000585,
+        "Hong": 0.0005557505557505557,
+        "Yugoslavia": 0.0004972504972504973,
+        "Trinadad&Tobago": 0.000468000468000468,
+        "Honduras": 0.0004095004095004095,
+        "Hungary": 0.0004095004095004095,
+        "Scotland": 0.0004095004095004095,
+        "Laos": 0.00038025038025038023,
+        "Outlying-US(Guam-USVI-etc)": 0.00032175032175032174,
+        "Holand-Netherlands": 2.925002925002925e-05
+      }
+    }
+  },
+  "has_int8": true,
+  "int8_info": {
+    "quantized_matmuls": 3,
+    "ops": {
+      "DynamicQuantizeLinear": 3,
+      "Mul": 6,
+      "MatMulInteger": 3,
+      "Cast": 3,
+      "Add": 3,
+      "Relu": 2,
+      "Sigmoid": 1
+    }
+  },
+  "exporter": "legacy",
+  "protected_attribute": "sex",
+  "performance": {
+    "accuracy": 0.8523902139420616,
+    "precision": 0.7475138121546961,
+    "recall": 0.5786997433704021,
+    "f1": 0.6523625843780135,
+    "roc_auc": 0.9081555154872791
+  },
+  "fairness": {
+    "statistical_parity_difference": -0.11783480145073419,
+    "disparate_impact": 0.47477047544485035,
+    "equal_opportunity_difference": 0.057058160196828855,
+    "average_odds_difference": 0.013110646081726931,
+    "selection_rate_unprivileged": 0.10651435628280334,
+    "selection_rate_privileged": 0.22434915773353753,
+    "backend": "aif360"
+  },
+  "calibration": {
+    "brier": 0.10101702671773224,
+    "ece": 0.011366173157119203,
+    "ece_privileged": 0.021340889022236055,
+    "ece_unprivileged": 0.04163260267298048
+  },
+  "mitigation": "adversarial_debiasing",
+  "trained_on": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce GTX 1650",
+    "torch": "2.14.1+cu130",
+    "cuda_build": "13.0"
+  },
+  "champion": {
+    "champion": "adversarial",
+    "reason": "no variant met the fairness criteria; chose the smallest fairness gap among variants losing <= 5% accuracy vs baseline",
+    "candidates": {
+      "baseline": {
+        "accuracy": 0.8568942573446617,
+        "roc_auc": 0.9154750364315489,
+        "disparate_impact": 0.3254956315029477,
+        "abs_spd": 0.1650624779262312,
+        "abs_eod": 0.07214780390012754,
+        "meets_fairness_criteria": false
+      },
+      "reweighed": {
+        "accuracy": 0.8514689323369843,
+        "roc_auc": 0.9078415923214416,
+        "disparate_impact": 0.6321665104588197,
+        "abs_spd": 0.0693419641079928,
+        "abs_eod": 0.17454323856387832,
+        "meets_fairness_criteria": false
+      },
+      "adversarial": {
+        "accuracy": 0.8523902139420616,
+        "roc_auc": 0.9081555154872791,
+        "disparate_impact": 0.47477047544485035,
+        "abs_spd": 0.11783480145073419,
+        "abs_eod": 0.057058160196828855,
+        "meets_fairness_criteria": false
+      }
+    }
+  },
+  "fairness_report": {
+    "protected_attribute": "sex",
+    "privileged": "Male",
+    "unprivileged": "Female",
+    "threshold": 0.5,
+    "baseline": {
+      "statistical_parity_difference": -0.1650624779262312,
+      "disparate_impact": 0.3254956315029477,
+      "equal_opportunity_difference": -0.07214780390012754,
+      "average_odds_difference": -0.06718365924712573,
+      "selection_rate_unprivileged": 0.07965421426366162,
+      "selection_rate_privileged": 0.2447166921898928,
+      "backend": "aif360"
+    },
+    "reweighed": {
+      "statistical_parity_difference": -0.0693419641079928,
+      "disparate_impact": 0.6321665104588197,
+      "equal_opportunity_difference": 0.17454323856387832,
+      "average_odds_difference": 0.08792120857559134,
+      "selection_rate_unprivileged": 0.1191725841309046,
+      "selection_rate_privileged": 0.1885145482388974,
+      "backend": "aif360"
+    },
+    "adversarial": {
+      "statistical_parity_difference": -0.11783480145073419,
+      "disparate_impact": 0.47477047544485035,
+      "equal_opportunity_difference": 0.057058160196828855,
+      "average_odds_difference": 0.013110646081726931,
+      "selection_rate_unprivileged": 0.10651435628280334,
+      "selection_rate_privileged": 0.22434915773353753,
+      "backend": "aif360"
+    },
+    "variants": [
+      "baseline",
+      "reweighed",
+      "adversarial"
+    ],
+    "improvement_pct": {
+      "reweighed": {
+        "statistical_parity_difference": 57.990474286359174,
+        "equal_opportunity_difference": -141.92453425955182,
+        "average_odds_difference": -30.866954198171054
+      },
+      "adversarial": {
+        "statistical_parity_difference": 28.61200017644454,
+        "equal_opportunity_difference": 20.91490369434794,
+        "average_odds_difference": 80.48536470229874
+      }
+    }
+  },
+  "parity_checks": {
+    "max_abs_diff_onnx_vs_torch": 1.1920928955078125e-07,
+    "int8_label_agreement": 0.9975,
+    "int8_max_abs_diff": 0.03192681074142456
+  },
+  "environment": {
+    "python": "3.14.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "numpy": "2.5.5",
+      "pandas": "3.1.1",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "scipy": "1.18.1",
+      "onnx": "1.23.2",
+      "torch": "2.14.1+cu130",
+      "fastapi": "0.163.2",
+      "pydantic": "2.14.3"
+    }
+  }
+}

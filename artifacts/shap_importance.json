@@ -1,0 +1,19 @@
+{
+  "method": "SHAP KernelExplainer on raw features",
+  "n_explained": 80,
+  "mean_abs_shap": {
+    "marital_status": 0.07874875591465723,
+    "education_num": 0.07282532661158657,
+    "age": 0.04751640217364823,
+    "relationship": 0.04645693561140332,
+    "occupation": 0.040576771217069554,
+    "capital_gain": 0.040195219233268395,
+    "hours_per_week": 0.03747912042088987,
+    "capital_loss": 0.017340731485176043,
+    "workclass": 0.011802635511596406,
+    "sex": 0.0053342295780820816,
+    "native_country": 0.0036594377532541424,
+    "race": 0.0035305096385696336
+  },
+  "protected_attribute_rank": 10
+}

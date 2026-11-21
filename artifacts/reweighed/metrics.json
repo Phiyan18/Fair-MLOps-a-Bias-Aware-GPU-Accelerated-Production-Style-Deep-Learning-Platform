@@ -1,0 +1,60 @@
+{
+  "performance": {
+    "accuracy": 0.8514689323369843,
+    "precision": 0.7742733457019171,
+    "recall": 0.5355004277159966,
+    "f1": 0.6331226295828066,
+    "roc_auc": 0.9078415923214416
+  },
+  "fairness": {
+    "statistical_parity_difference": -0.0693419641079928,
+    "disparate_impact": 0.6321665104588197,
+    "equal_opportunity_difference": 0.17454323856387832,
+    "average_odds_difference": 0.08792120857559134,
+    "selection_rate_unprivileged": 0.1191725841309046,
+    "selection_rate_privileged": 0.1885145482388974,
+    "backend": "aif360"
+  },
+  "calibration": {
+    "brier": 0.10219687016728209,
+    "ece": 0.015091140252525555,
+    "ece_privileged": 0.046834452011421335,
+    "ece_unprivileged": 0.050349405756608935
+  },
+  "variant": "reweighed",
+  "train_seconds": 1.683852195739746,
+  "epochs_run": 16,
+  "params": {
+    "variant": "reweighed",
+    "epochs": 30,
+    "batch_size": 1024,
+    "lr": 0.002904665979638737,
+    "hidden": [
+      64,
+      32
+    ],
+    "dropout": 0.403417369633632,
+    "weight_decay": 4.471679901231308e-05,
+    "patience": 5,
+    "seed": 42,
+    "n_train": 34188,
+    "n_features": 91,
+    "synthetic": false,
+    "mitigation": "aif360_reweighing",
+    "device": "cuda",
+    "amp": true,
+    "adv_lambda": 0.0
+  },
+  "device": {
+    "device": "cuda",
+    "torch": "2.14.1+cu130",
+    "cuda_build": "13.0",
+    "cuda_available": true,
+    "python": "3.14.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "gpu_name": "NVIDIA GeForce GTX 1650",
+    "compute_capability": "7.5",
+    "vram_gb": 4.0
+  },
+  "gpu_peak_memory_mb": 34.087890625
+}

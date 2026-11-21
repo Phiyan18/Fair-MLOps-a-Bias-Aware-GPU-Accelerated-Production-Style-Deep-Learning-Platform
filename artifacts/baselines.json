@@ -1,0 +1,14 @@
+{
+  "age": 37.0,
+  "education_num": 10.0,
+  "capital_gain": 0.0,
+  "capital_loss": 0.0,
+  "hours_per_week": 40.0,
+  "workclass": "Private",
+  "marital_status": "Married-civ-spouse",
+  "occupation": "Prof-specialty",
+  "relationship": "Husband",
+  "race": "White",
+  "sex": "Male",
+  "native_country": "United-States"
+}

@@ -1,0 +1,70 @@
+{
+  "variant": "adversarial",
+  "passed": false,
+  "synthetic_data_relaxed_thresholds": false,
+  "checks": [
+    {
+      "name": "accuracy",
+      "value": 0.85239,
+      "op": ">=",
+      "threshold": 0.8,
+      "passed": true
+    },
+    {
+      "name": "roc_auc",
+      "value": 0.90816,
+      "op": ">=",
+      "threshold": 0.85,
+      "passed": true
+    },
+    {
+      "name": "disparate_impact >= 0.8 (80% rule)",
+      "value": 0.47477,
+      "op": ">=",
+      "threshold": 0.8,
+      "passed": false
+    },
+    {
+      "name": "disparate_impact <= 1.25",
+      "value": 0.47477,
+      "op": "<=",
+      "threshold": 1.25,
+      "passed": true
+    },
+    {
+      "name": "|equal_opportunity_difference|",
+      "value": 0.05706,
+      "op": "<=",
+      "threshold": 0.1,
+      "passed": true
+    },
+    {
+      "name": "calibration ECE",
+      "value": 0.01137,
+      "op": "<=",
+      "threshold": 0.1,
+      "passed": true
+    },
+    {
+      "name": "ONNX vs PyTorch max |diff|",
+      "value": 0.0,
+      "op": "<=",
+      "threshold": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "INT8 vs FP32 label agreement",
+      "value": 0.9975,
+      "op": ">=",
+      "threshold": 0.98,
+      "passed": true
+    },
+    {
+      "name": "ONNX CPU p95 latency (batch 1, ms)",
+      "value": 0.0177,
+      "op": "<=",
+      "threshold": 50.0,
+      "passed": true
+    }
+  ]
+}

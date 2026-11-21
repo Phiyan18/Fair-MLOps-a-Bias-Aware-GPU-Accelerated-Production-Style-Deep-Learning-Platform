@@ -1,0 +1,18 @@
+{
+  "variant": "reweighed",
+  "hidden": [
+    64,
+    32
+  ],
+  "dropout": 0.403417369633632,
+  "lr": 0.002904665979638737,
+  "weight_decay": 4.471679901231308e-05,
+  "batch_size": 1024,
+  "adv_lambda": 0.0,
+  "val_accuracy": 0.8497441146366428,
+  "val_abs_spd": 0.07877047174417992,
+  "n_trials": 30,
+  "pareto_size": 9,
+  "constraint_max_spd": 0.08,
+  "constraint_met": true
+}

@@ -1,0 +1,30 @@
+{
+  "champion": "adversarial",
+  "reason": "no variant met the fairness criteria; chose the smallest fairness gap among variants losing <= 5% accuracy vs baseline",
+  "candidates": {
+    "baseline": {
+      "accuracy": 0.8568942573446617,
+      "roc_auc": 0.9154750364315489,
+      "disparate_impact": 0.3254956315029477,
+      "abs_spd": 0.1650624779262312,
+      "abs_eod": 0.07214780390012754,
+      "meets_fairness_criteria": false
+    },
+    "reweighed": {
+      "accuracy": 0.8514689323369843,
+      "roc_auc": 0.9078415923214416,
+      "disparate_impact": 0.6321665104588197,
+      "abs_spd": 0.0693419641079928,
+      "abs_eod": 0.17454323856387832,
+      "meets_fairness_criteria": false
+    },
+    "adversarial": {
+      "accuracy": 0.8523902139420616,
+      "roc_auc": 0.9081555154872791,
+      "disparate_impact": 0.47477047544485035,
+      "abs_spd": 0.11783480145073419,
+      "abs_eod": 0.057058160196828855,
+      "meets_fairness_criteria": false
+    }
+  }
+}
