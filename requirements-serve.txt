@@ -1,0 +1,12 @@
+# ===== Slim runtime image: NO torch, NO mlflow, NO shap, NO optuna =====
+# Latest versions are installed, BUT constrained to the exact numpy/pandas/scikit-learn that produced the
+# pickled preprocessor:   pip install -r requirements-serve.txt -c artifacts/model/constraints.txt
+# (the Dockerfile does this automatically; constraints.txt is written by the export step)
+numpy
+pandas
+scikit-learn
+joblib
+onnxruntime
+fastapi
+uvicorn[standard]
+pydantic

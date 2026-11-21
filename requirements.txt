@@ -1,0 +1,36 @@
+# ===== Full training + serving stack =====
+# Only MINIMUM versions are listed on purpose: pip installs the LATEST releases (security fixes).
+# PyTorch is installed separately (CPU or CUDA build) - see HOW_TO_RUN.md, Step 3.
+# For reproducibility after a successful run:  pip freeze > requirements.lock.txt
+
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+scipy>=1.13
+joblib>=1.4
+matplotlib>=3.9
+
+# MLOps / tuning
+mlflow>=3.7          # 3.7+ uses SQLite by default (file store is deprecated)
+optuna>=4.0
+
+# Export + fast inference.  For GPU inference swap onnxruntime for onnxruntime-gpu (optional, see HOW_TO_RUN.md)
+onnx>=1.17
+onnxscript>=0.2      # needed by the modern torch.export based ONNX exporter
+onnxruntime>=1.20
+
+# Responsible AI (IBM's open-source toolkit + SHAP). AIF360 0.6.x may lag behind the newest NumPy/pandas;
+# the project falls back automatically to an equivalent NumPy implementation if it cannot run.
+aif360>=0.6.1
+shap>=0.46
+
+# Serving
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.9
+
+# Quality + security tooling
+pytest>=8
+httpx>=0.27
+pip-audit
+bandit
