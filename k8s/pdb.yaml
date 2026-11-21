@@ -1,0 +1,11 @@
+# Keeps at least one replica up during voluntary disruptions (node drains, cluster upgrades)
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: fairml-api
+  namespace: fairml
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: fairml-api

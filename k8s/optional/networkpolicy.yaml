@@ -1,0 +1,23 @@
+# OPTIONAL (needs a CNI that enforces NetworkPolicy, e.g. Calico/Cilium): default-deny + allow only what's needed.
+#   kubectl apply -f k8s/optional/networkpolicy.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: fairml-api
+  namespace: fairml
+spec:
+  podSelector:
+    matchLabels:
+      app: fairml-api
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from:
+        - podSelector: {}                         # other pods in this namespace
+        - namespaceSelector:
+            matchExpressions:
+              - key: kubernetes.io/metadata.name
+                operator: In
+                values: [ingress-nginx, openshift-ingress, monitoring]
+      ports:
+        - port: 8000
+  egress: []                                      # the model server needs no outbound connections

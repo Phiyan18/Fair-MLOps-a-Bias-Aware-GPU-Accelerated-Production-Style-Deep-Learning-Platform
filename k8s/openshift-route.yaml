@@ -1,0 +1,15 @@
+# OpenShift only (e.g. Red Hat Developer Sandbox): exposes the service on a public HTTPS URL.
+# Apply AFTER the other manifests:  oc apply -f k8s/openshift-route.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: fairml-api
+spec:
+  to:
+    kind: Service
+    name: fairml-api
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

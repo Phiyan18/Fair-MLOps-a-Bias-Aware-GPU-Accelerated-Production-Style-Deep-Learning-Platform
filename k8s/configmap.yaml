@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fairml-config
+  namespace: fairml
+data:
+  USE_QUANTIZED: "0"
+  ORT_THREADS: "1"
+  RATE_LIMIT_PER_MIN: "0"
+  LOG_LEVEL: "INFO"
