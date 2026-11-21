@@ -1,0 +1,3 @@
+{"age": 45, "education_num": 14, "capital_gain": 0, "capital_loss": 0, "hours_per_week": 50,
+ "workclass": "Private", "marital_status": "Married-civ-spouse", "occupation": "Exec-managerial",
+ "relationship": "Husband", "race": "White", "sex": "Male", "native_country": "United-States"}
